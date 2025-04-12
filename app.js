@@ -1,31 +1,45 @@
-
 var input = document.querySelector('#input');
 var ol = document.querySelector('ol');
 
-var arr = [];
+var arra = [];
 
 function addTodo() {
-    arr.push(input.value)
-    renderTodo()
+    var inputValue = input.value.trim();
+
+    if (inputValue === "") {
+        alert("The box is empty");
+        return;
+    }
+
+    arra.push(inputValue);
+    console.log("Current To-Do List:", arra);
+    input.value = ""; 
+    renderTodo();
 }
+
 function deleteTodo(index) {
-    arr.splice(index, 1)
-    renderTodo()
+    arra.splice(index, 1);
+    console.log("Updated To-Do List:", arra);
+    renderTodo();
 }
+
 function editTodo(index) {
-    console.log('edit todo', index)
-    var editvalue = prompt('Enter the Edit ')
-    arr[index] = editvalue
-    renderTodo()
-}
-
-
-function renderTodo() {
-    ol.innerHTML = ""
-    for (var i = 0; i < arr.length; i++) {
-        ol.innerHTML += `<li>${arr[i]}
-        <button onclick="deleteTodo(${i})">delete</button> &nbsp
-        <button onclick="editTodo(${i})">edit</button>
-        </li>`
+    var editvalue = prompt('Enter the Edit', arra[index]);
+    if (editvalue !== null && editvalue.trim() !== "") {
+        arra[index] = editvalue.trim();
+        console.log("Updated To-Do List:", arra);
+        renderTodo();
     }
 }
+
+function renderTodo() {
+    ol.innerHTML = "";
+    for (var i = 0; i < arra.length; i++) {
+        ol.innerHTML += `
+        <li>${arra[i]}
+            <button onclick="deleteTodo(${i})">delete</button> &nbsp
+            <button onclick="editTodo(${i})">edit</button>
+        </li>`;
+    }
+}
+
