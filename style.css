@@ -1,0 +1,102 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* Header */
+h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Input Section */
+#input {
+    padding: 10px;
+    width: 250px;
+    font-size: 16px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Keep Input + Button at Top Center */
+input[type="text"],
+button {
+    margin-top: 10px;
+}
+
+/* Ordered List */
+ol {
+    margin-top: 30px;
+    list-style-position: inside;
+    text-align: left;
+    display: inline-block;
+}
+
+/* List Items */
+li {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+}
+
+/* Buttons inside list */
+li button {
+    margin-left: 10px;
+    background-color: #28a745;
+}
+
+li button:nth-child(2) {
+    background-color: #dc3545;
+}
+
+li button:hover {
+    opacity: 0.85;
+}
+
+
+.input-wrapper {
+    position: fixed;
+    top: 100px;
+    /* adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Push the list down so it doesn't hide behind the fixed input */
+ol {
+    margin-top: 150px;
+} 
